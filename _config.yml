@@ -84,15 +84,15 @@ exclude:
   - LICENSE
 
 navigation:
-- title: "Home"
-  url: "/"
-- title: "Blog"
-  url: "/blog"
-- title: "Projects"
-  url: "/projects"
-- title: "About"
-  url: "/about"
-- title: "Contact"
-  url: "/contact"
+  - title: "Home"
+    url: "/"
+  - title: "Blog"
+    url: "/blog"
+  - title: "Projects"
+    url: "/projects"
+  - title: "About"
+    url: "/about"
+  - title: "Contact"
+    url: "/contact"
   - README.md
   - CNAME
