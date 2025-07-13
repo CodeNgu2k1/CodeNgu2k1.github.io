@@ -3,10 +3,10 @@
 #
 
 # Name of your site (displayed in the header)
-name: Your Name
+name: Le Trung Kien
 
 # Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
+description: C++ Linux Software Developer
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
@@ -82,5 +82,17 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
+
+navigation:
+- title: "Home"
+  url: "/"
+- title: "Blog"
+  url: "/blog"
+- title: "Projects"
+  url: "/projects"
+- title: "About"
+  url: "/about"
+- title: "Contact"
+  url: "/contact"
   - README.md
   - CNAME
