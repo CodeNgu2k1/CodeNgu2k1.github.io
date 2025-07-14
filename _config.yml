@@ -1,20 +1,27 @@
 # Site settings
-title: "Viet-Anh on Software"
-subtitle: "AI & Software Engineering"
-description: "Welcome to my corner of the internet! I'm a passionate developer sharing insights on AI, Deep Learning, Software Engineering, and the journey of building meaningful technology."
+title: "Le Trung Kien | Embedded Systems"
+subtitle: "Linux Embedded Software Developer"
+description: "Specializing in Linux kernel development, embedded systems, real-time applications, and IoT solutions. Sharing insights on system programming, driver development, and embedded Linux."
 baseurl: ""
 url: "https://yourdomain.com"
 
 # Author settings
 author:
-  name: "Viet-Anh"
-  title: "Software Engineer"
-  bio: "Welcome to my corner of the internet! I'm a passionate developer sharing insights on AI, Deep Learning, Software Engineering, and the journey of building meaningful technology. Join me as I explore the intersection of code and creativity."
+  name: "Kien LT"
+  title: "Linux Embedded Software Developer"
+  bio: "Passionate Linux embedded developer with expertise in kernel development, device drivers, real-time systems, and IoT solutions. I specialize in low-level programming, system optimization, and building robust embedded applications."
   avatar: "/assets/img/avatar.jpg"
   email: "your-email@example.com"
   github: "your-github"
   linkedin: "your-linkedin"
   twitter: "your-twitter"
+  specialties:
+    - "Linux Kernel Development"
+    - "Device Driver Programming"
+    - "Real-time Systems"
+    - "IoT & Embedded Solutions"
+    - "System Programming"
+    - "Hardware Integration"
 
 # Build settings
 markdown: kramdown
