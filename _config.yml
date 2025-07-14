@@ -1,98 +1,59 @@
-#
-# This file contains configuration flags to customize your site
-#
-
-# Name of your site (displayed in the header)
-name: Le Trung Kien
-
-# Short bio or description (displayed in the header)
-description: C++ Linux Software Developer
-
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
-
-#
-# Flags below are optional
-#
-
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email:
-  facebook:
-  flickr:
-  github: barryclark/jekyll-now
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: jekyllrb
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
-
-
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus:
-
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
-
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url:
-
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
+# Site settings
+title: "Viet-Anh on Software"
+subtitle: "AI & Software Engineering"
+description: "Welcome to my corner of the internet! I'm a passionate developer sharing insights on AI, Deep Learning, Software Engineering, and the journey of building meaningful technology."
 baseurl: ""
+url: "https://yourdomain.com"
 
-#
-# !! You don't need to change any of the configuration flags below !!
-#
+# Author settings
+author:
+  name: "Viet-Anh"
+  title: "Software Engineer"
+  bio: "Welcome to my corner of the internet! I'm a passionate developer sharing insights on AI, Deep Learning, Software Engineering, and the journey of building meaningful technology. Join me as I explore the intersection of code and creativity."
+  avatar: "/assets/img/avatar.jpg"
+  email: "your-email@example.com"
+  github: "your-github"
+  linkedin: "your-linkedin"
+  twitter: "your-twitter"
 
-permalink: /:title/
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 10
+paginate_path: "/blog/page:num/"
 
-# The release of Jekyll Now that you're using
-version: v1.2.0
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
 
-# Jekyll 3 now only supports Kramdown for Markdown
-kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
 
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
-
-# Use the following plug-ins
-gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-
-# Exclude these files from your production _site
+# Exclude from processing
 exclude:
+  - README.md
   - Gemfile
   - Gemfile.lock
-  - LICENSE
+  - node_modules
+  - vendor
 
-navigation:
-  - title: "Home"
-    url: "/"
-  - title: "Blog"
-    url: "/blog"
-  - title: "Projects"
-    url: "/projects"
-  - title: "About"
-    url: "/about"
-  - title: "Contact"
-    url: "/contact"
-  - README.md
-  - CNAME
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
