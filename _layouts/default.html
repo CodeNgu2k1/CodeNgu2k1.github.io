@@ -13,15 +13,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-text { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .linux-gradient { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
         .profile-shadow { box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25); }
         .nav-blur { backdrop-filter: blur(10px); }
         .status-indicator { animation: pulse 2s infinite; }
+        .terminal-bg { background: #0d1117; color: #58a6ff; font-family: 'JetBrains Mono', monospace; }
+        .code-highlight { background: rgba(88, 166, 255, 0.1); border-left: 3px solid #58a6ff; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+        .cursor-blink { animation: blink 1s infinite; }
+        .kernel-badge { background: linear-gradient(45deg, #1e40af, #3b82f6); }
+        .embedded-icon { filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.5)); }
     </style>
     
     {% seo %}
@@ -40,11 +47,12 @@
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-gray-900 hover:text-blue-600 font-medium transition-colors {% if page.url == '/' %}text-blue-600 border-b-2 border-blue-600{% endif %}">Home</a>
-                    <a href="/about" class="text-gray-700 hover:text-blue-600 transition-colors {% if page.url contains '/about' %}text-blue-600{% endif %}">About</a>
-                    <a href="/projects" class="text-gray-700 hover:text-blue-600 transition-colors {% if page.url contains '/projects' %}text-blue-600{% endif %}">Projects</a>
-                    <a href="/blog" class="text-gray-700 hover:text-blue-600 transition-colors {% if page.url contains '/blog' %}text-blue-600{% endif %}">Blog</a>
-                    <a href="/notes" class="text-gray-700 hover:text-blue-600 transition-colors {% if page.url contains '/notes' %}text-blue-600{% endif %}">Notes</a>
+                    <a href="/" class="text-gray-900 hover:text-red-600 font-medium transition-colors {% if page.url == '/' %}text-red-600 border-b-2 border-red-600{% endif %}">Home</a>
+                    <a href="/about" class="text-gray-700 hover:text-red-600 transition-colors {% if page.url contains '/about' %}text-red-600{% endif %}">About</a>
+                    <a href="/projects" class="text-gray-700 hover:text-red-600 transition-colors {% if page.url contains '/projects' %}text-red-600{% endif %}">Projects</a>
+                    <a href="/blog" class="text-gray-700 hover:text-red-600 transition-colors {% if page.url contains '/blog' %}text-red-600{% endif %}">Blog</a>
+                    <a href="/embedded" class="text-gray-700 hover:text-red-600 transition-colors {% if page.url contains '/embedded' %}text-red-600{% endif %}">Embedded</a>
+                    <a href="/kernel" class="text-gray-700 hover:text-red-600 transition-colors {% if page.url contains '/kernel' %}text-red-600{% endif %}">Kernel</a>
                 </div>
                 
                 <div class="flex items-center space-x-4">
@@ -55,9 +63,9 @@
                         <kbd class="absolute right-3 top-2 text-xs text-gray-400 bg-gray-200 px-1 rounded">⌘K</kbd>
                     </div>
                     
-                    <!-- AI Apps Button -->
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
-                        <i class="fas fa-robot mr-2"></i>AI Apps
+                    <!-- Linux Terminal Button -->
+                    <button class="linux-gradient text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
+                        <i class="fab fa-linux mr-2"></i>Terminal
                     </button>
                 </div>
             </div>
@@ -73,7 +81,7 @@
     <footer class="bg-white border-t border-gray-200 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="text-center">
-                <p class="text-gray-600 mb-4">Building the future, one line at a time</p>
+                <p class="text-gray-600 mb-4">Building embedded systems, one kernel patch at a time</p>
                 <div class="flex justify-center space-x-6">
                     {% if site.author.github %}
                     <a href="https://github.com/{{ site.author.github }}" class="text-gray-400 hover:text-gray-600 transition-colors">
